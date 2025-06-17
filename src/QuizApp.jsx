@@ -11,7 +11,12 @@ const styles = {
   glossaryBtn: { padding: '0.5rem 1rem', background: '#0c4a6e', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold', marginLeft: '1rem' },
   notesBtn: { marginLeft: '1rem', padding: '0.25rem 0.75rem', background: '#fbbf24', color: '#333', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' },
   sectionTitle: { fontSize: '1.25rem', fontWeight: 'bold', margin: '1.5rem 0 0.75rem', textAlign: 'center' },
-  card: { background: '#fff', borderRadius: '8px', boxShadow: '0 2px 6px rgba(0,0,0,0.1)', padding: '1rem', marginBottom: '1.5rem' },
+  card: {
+  borderRadius: '8px',
+  boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
+  padding: '1rem',
+  marginBottom: '1.5rem'
+},
   cardWrapper: { position: 'relative' },
   questionNumber: { fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.25rem' },
   questionText: { marginBottom: '0.75rem', fontWeight: '600' },
@@ -58,7 +63,8 @@ const styles = {
     borderBottom: '8px solid transparent',
     borderRight: '16px solid #fff',
     filter: 'drop-shadow(-2px 0 2px rgba(0,0,0,0.08))'
-  }
+  },
+  questionCard: { marginBottom: '1.5rem' }
 };
 
 function shuffleArray(arr) {
@@ -115,7 +121,7 @@ export default function QuizApp() {
     setAnswers(prev => {
       const newAns = { ...prev, [qId]: idx };
       const correctCount = questions.reduce((acc, q) => acc + (newAns[q.id] === q.options.findIndex(o => o.correct) ? 1 : 0), 0);
-      setScore(`${correctCount}/${questions.length}`);
+      setScore(`${correctCount}/${initialQuestions.length}`);
       return newAns;
     });
   };
@@ -148,14 +154,14 @@ export default function QuizApp() {
           {glossaryOpen ? 'Hide Glossary' : 'Show Glossary'}
         </button>
       </header>
-      <div style={styles.sectionTitle}>Multiple Choice</div>
+      <div className="section-title" style={styles.sectionTitle}>Multiple Choice</div>
       {questions.map((q, idx) => {
         const userIdx = answers[q.id];
         const correctIdx = q.options.findIndex(o => o.correct);
         const isAnswered = userIdx !== undefined;
         return (
           <div key={q.id} style={styles.cardWrapper}>
-            <div style={styles.card}>
+            <div className="question-card" style={styles.card}>
               <div style={styles.questionNumber}>Question {idx + 1}</div>
               <div style={styles.questionText}>{q.question}</div>
               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '0.5rem' }}>
@@ -167,16 +173,12 @@ export default function QuizApp() {
                 {q.options.map((opt, i) => (
                   <button
                     key={i}
-                    style={{
-                      ...styles.optionBtn,
-                      ...(isAnswered
-                        ? i === correctIdx
-                          ? styles.correctBtn
-                          : i === userIdx
-                          ? styles.incorrectBtn
-                          : {}
-                        : {})
-                    }}
+                    className={
+                      "option-btn" +
+                      (isAnswered && i === correctIdx ? " correct-btn" : "") +
+                      (isAnswered && i === userIdx && i !== correctIdx ? " incorrect-btn" : "")
+                    }
+                    style={styles.optionBtn}
                     onClick={() => selectOption(q.id, i)}
                   >
                     {opt.text}
@@ -188,27 +190,26 @@ export default function QuizApp() {
                   <div style={answers[q.id] === correctIdx ? styles.summaryCorrect : styles.summaryIncorrect}>
                     {answers[q.id] === correctIdx ? 'Correct.' : 'Incorrect.'}
                   </div>
-                  <div style={styles.explanationContainer}>
-                    <div style={styles.explanationTitle}>Explanation</div>
+                  <div className="explanation-box" style={styles.explanationContainer}>
+                    <div className="explanation-title" style={styles.explanationTitle}>Explanation</div>
                     <div style={styles.explanationText}>{q.explanation}</div>
                   </div>
                 </>
               )}
+              {openNotesQid === q.id && (
+                <div className="notes-popup" style={styles.notesPopup}>
+                  <div style={styles.notesPopupArrow}></div>
+                  <button style={styles.closeNotes} onClick={closeNotes}>&times;</button>
+                  <label style={styles.notesLabel}>Your Notes for Question {idx + 1}:</label>
+                  <textarea
+                    style={styles.notesTextarea}
+                    value={notes[q.id] || ''}
+                    onChange={e => handleNoteChange(q.id, e.target.value)}
+                    placeholder="Write your notes here..."
+                  />
+                </div>
+              )}
             </div>
-            {}
-            {openNotesQid === q.id && (
-              <div style={styles.notesPopup}>
-                <div style={styles.notesPopupArrow}></div>
-                <button style={styles.closeNotes} onClick={closeNotes}>&times;</button>
-                <label style={styles.notesLabel}>Your Notes for Question {idx + 1}:</label>
-                <textarea
-                  style={styles.notesTextarea}
-                  value={notes[q.id] || ''}
-                  onChange={e => handleNoteChange(q.id, e.target.value)}
-                  placeholder="Write your notes here..."
-                />
-              </div>
-            )}
           </div>
         );
       })}
