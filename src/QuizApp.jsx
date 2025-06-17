@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { QuizContext } from './QuizContext'; // <-- Add this import
 import initialQuestions from './data/questions.json';
 import glossary from './data/glossary.json';
 
@@ -88,7 +89,7 @@ function loadNotes(questions) {
 
 export default function QuizApp() {
   const [questions, setQuestions] = useState(() => shuffleArray(initialQuestions));
-  const [answers, setAnswers] = useState({});
+  const { quizState: answers, setQuizState: setAnswers } = useContext(QuizContext);
   const [score, setScore] = useState(`0/${initialQuestions.length}`);
   const [glossaryOpen, setGlossaryOpen] = useState(false);
 

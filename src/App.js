@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { QuizProvider } from './QuizContext';
 import QuizApp from './QuizApp';
 import Notes from './Notes';
 
@@ -40,68 +41,70 @@ export default function App() {
   }, [theme]);
 
   return (
-    <div className={theme}>
-      {/* Tabs */}
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: '0.5rem',
-        margin: '2rem auto 0 auto',
-        maxWidth: '900px'
-      }}>
-        <button style={tabBtnStyle(tab === 'quiz', theme)} onClick={() => setTab('quiz')}>Quiz</button>
-        <button style={tabBtnStyle(tab === 'notes', theme)} onClick={() => setTab('notes')}>Notes</button>
-        <button
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-          style={toggleBtnStyle(theme)}
-          aria-label="Toggle dark mode"
-        >
-          {theme === 'dark' ? '🌞 Light Mode' : '🌙 Dark Mode'}
-        </button>
-      </div>
-      {/* Blue header and toggle button */}
-      <div
-        style={{
+    <QuizProvider>
+      <div className={theme}>
+        {/* Tabs */}
+        <div style={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          maxWidth: '900px',
+          gap: '0.5rem',
           margin: '2rem auto 0 auto',
-          gap: '1.5rem'
-        }}
-      >
+          maxWidth: '900px'
+        }}>
+          <button style={tabBtnStyle(tab === 'quiz', theme)} onClick={() => setTab('quiz')}>Quiz</button>
+          <button style={tabBtnStyle(tab === 'notes', theme)} onClick={() => setTab('notes')}>Notes</button>
+          <button
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            style={toggleBtnStyle(theme)}
+            aria-label="Toggle dark mode"
+          >
+            {theme === 'dark' ? '🌞 Light Mode' : '🌙 Dark Mode'}
+          </button>
+        </div>
+        {/* Blue header and toggle button */}
         <div
           style={{
-            background: '#223e8a',
-            color: '#fff',
-            padding: '2rem 1rem 1.5rem 1rem',
-            borderRadius: '10px',
-            maxWidth: '800px',
-            flex: 1,
             display: 'flex',
-            flexDirection: 'column',
+            justifyContent: 'center',
             alignItems: 'center',
-            justifyContent: 'center'
+            maxWidth: '900px',
+            margin: '2rem auto 0 auto',
+            gap: '1.5rem'
           }}
         >
-          <h1
+          <div
             style={{
-              fontSize: '2.2rem',
-              fontWeight: 'bold',
-              margin: 0,
-              textAlign: 'center',
-              width: '100%'
+              background: '#223e8a',
+              color: '#fff',
+              padding: '2rem 1rem 1.5rem 1rem',
+              borderRadius: '10px',
+              maxWidth: '800px',
+              flex: 1,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center'
             }}
           >
-            Data Structures & Algorithms Practice
-          </h1>
+            <h1
+              style={{
+                fontSize: '2.2rem',
+                fontWeight: 'bold',
+                margin: 0,
+                textAlign: 'center',
+                width: '100%'
+              }}
+            >
+              Data Structures & Algorithms Practice
+            </h1>
+          </div>
+        </div>
+        <div>
+          {tab === 'quiz' && <QuizApp theme={theme} />}
+          {tab === 'notes' && <Notes theme={theme} />}
         </div>
       </div>
-      <div>
-        {tab === 'quiz' && <QuizApp theme={theme} />}
-        {tab === 'notes' && <Notes theme={theme} />}
-      </div>
-    </div>
+    </QuizProvider>
   );
 }
