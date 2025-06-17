@@ -88,8 +88,7 @@ function loadNotes(questions) {
 }
 
 export default function QuizApp() {
-  const [questions, setQuestions] = useState(() => shuffleArray(initialQuestions));
-  const { quizState: answers, setQuizState: setAnswers } = useContext(QuizContext);
+  const { quizState: answers, setQuizState: setAnswers, questions, setQuestions } = useContext(QuizContext);
   const [score, setScore] = useState(`0/${initialQuestions.length}`);
   const [glossaryOpen, setGlossaryOpen] = useState(false);
 
