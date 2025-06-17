@@ -1524,6 +1524,82 @@ const notesData = [
         </ul>
       </div>
     )
+  },
+  {
+    title: "What is the Law of Large Numbers?",
+    content: (
+      <div>
+        <h3 style={{ marginTop: 0, marginBottom: '0.5rem', color: '#2563eb', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <span role="img" aria-label="books">📚</span> What is the Law of Large Numbers?
+        </h3>
+        <p>
+          The Law of Large Numbers (LLN) is a fundamental concept in probability and statistics. It states that as the sample size increases, the sample average will get closer and closer to the true population mean.
+        </p>
+        <p>
+          In simple terms: the more data you collect, the more stable and accurate your statistical estimates become.
+        </p>
+        <h3 style={{ marginTop: '2rem', marginBottom: '0.5rem', color: '#16a34a', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <span role="img" aria-label="brain">🧠</span> How It Works in COMP615
+        </h3>
+        <p>
+          Imagine flipping a coin:
+        </p>
+        <ul>
+          <li>With 5 flips, you might get 80% heads — high variance.</li>
+          <li>With 5000 flips, you're likely to see something close to 50%.</li>
+        </ul>
+        <p>This law applies to:</p>
+        <ul>
+          <li>Sample means</li>
+          <li>Sample proportions</li>
+          <li>Model performance estimates (e.g., accuracy, error)</li>
+        </ul>
+        <p>
+          It ensures that techniques like cross-validation, bootstrap sampling, and empirical distributions become more reliable with more data.
+        </p>
+        <h3 style={{ marginTop: '2rem', marginBottom: '0.5rem', color: '#2563eb', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <span role="img" aria-label="bar chart">📊</span> LLN vs Central Limit Theorem (CLT)
+        </h3>
+        <table className="notes-table">
+          <thead>
+            <tr>
+              <th>Concept</th>
+              <th>What It Describes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>LLN</td>
+              <td>Sample average converging to population mean</td>
+            </tr>
+            <tr>
+              <td>CLT</td>
+              <td>Distribution of sample means becomes normal</td>
+            </tr>
+            <tr>
+              <td>LLN ≠ CLT</td>
+              <td>LLN is about convergence, CLT is about shape</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3 style={{ marginTop: '2rem', marginBottom: '0.5rem', color: '#eab308', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <span role="img" aria-label="puzzle">🧩</span> Why It Matters in COMP615?
+        </h3>
+        <p>
+          <span className="notes-quote" style={{ color: '#64748b', fontStyle: 'italic' }}>
+            “LLN justifies why we trust large samples — and why repeating experiments improves estimates.”
+          </span>
+          <br />
+          <span style={{ color: '#64748b', fontSize: '0.95em' }}>— Week 3: Sampling & Empirical Distributions</span>
+        </p>
+        <p>You’ll use this when:</p>
+        <ul>
+          <li>Evaluating models with repeated sampling (cross-validation, bootstrapping)</li>
+          <li>Explaining why larger datasets lead to more stable results</li>
+          <li>Understanding why small sample results can mislead</li>
+        </ul>
+      </div>
+    )
   }
 ];
 
