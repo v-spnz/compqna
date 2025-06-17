@@ -1384,7 +1384,7 @@ const notesData = [
           <tbody>
             <tr>
               <td>Addition Rule</td>
-                                                     <td>
+                                                                                                                                                                                                                                                                                                         <td>
                 P(A ∪ B) = P(A) + P(B) − P(A ∩ B)
               </td>
               <td>For the probability of A or B occurring</td>
@@ -1604,55 +1604,110 @@ const notesData = [
 ];
 
 const styles = {
-  container: { maxWidth: '800px', margin: '2rem auto', fontFamily: 'Segoe UI, Arial, sans-serif', color: '#222' },
-  tabTitle: { fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '2rem', textAlign: 'center', letterSpacing: '-1px', color: '#1e3a8a' },
-  dropdown: { 
-    border: 'none',
-    borderRadius: '10px',
+  container: {
+    maxWidth: 1200,
+    margin: '0 auto',
+    padding: '2rem 1rem'
+  },
+  tabTitle: {
+    fontSize: '2.5rem',
+    fontWeight: 700,
+    color: '#2563eb',
     marginBottom: '2rem',
-    background: '#fff',
-    boxShadow: '0 4px 24px 0 rgba(30,58,138,0.08), 0 1.5px 4px 0 rgba(30,58,138,0.04)'
+    textAlign: 'center'
   },
-  dropdownTitle: { 
-    padding: '1.25rem 1.5rem',
+  grid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+    gap: '2rem'
+  },
+  card: {
+    background: 'linear-gradient(90deg, #23233a 0%, #181825 100%)',
+    borderRadius: 12,
+    boxShadow: '0 2px 8px rgba(30,58,138,0.08)',
+    padding: '1.5rem',
     cursor: 'pointer',
-    fontWeight: 'bold',
-    fontSize: '1.2rem',
-    background: 'linear-gradient(90deg, #2563eb 0%, #1e3a8a 100%)',
-    color: '#fff',
-    borderRadius: '10px 10px 0 0',
-    border: 'none',
-    letterSpacing: '-0.5px'
+    transition: 'box-shadow 0.2s',
+    minHeight: 120
   },
-  dropdownContent: { 
-    padding: '2rem 2rem 1.5rem 2rem',
-    borderTop: '1px solid #e0e7ff',
-    background: '#f8fafc',
-    borderRadius: '0 0 10px 10px'
-  }
+  cardTitle: {
+    fontWeight: 600,
+    fontSize: '1.15rem',
+    color: '#a5b4fc',
+    marginBottom: '0.5rem'
+  },
+  cardContent: {
+    marginTop: '1rem',
+    color: '#e0e7ef',
+    fontSize: '1rem'
+  },
+  focusWrapper: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    width: '100%',
+    minHeight: '60vh',
+  },
+  focusCard: {
+    background: 'linear-gradient(90deg, #23233a 0%, #181825 100%)',
+    borderRadius: 16,
+    boxShadow: '0 4px 24px rgba(30,58,138,0.18)',
+    padding: '2.5rem 2rem 2rem 2rem',
+    maxWidth: 700,
+    width: '100%',
+    position: 'relative',
+    animation: 'fadeIn 0.2s'
+  },
+  closeBtn: {
+    position: 'absolute',
+    top: 18,
+    right: 22,
+    background: 'none',
+    border: 'none',
+    color: '#a5b4fc',
+    fontSize: '2rem',
+    cursor: 'pointer',
+    lineHeight: 1,
+    zIndex: 2,
+    transition: 'color 0.2s'
+  },
 };
 
 export default function Notes() {
-  const [openIdx, setOpenIdx] = useState(0);
+  const [openIdx, setOpenIdx] = useState(null);
 
   return (
     <div style={styles.container}>
       <div style={styles.tabTitle}>Notes</div>
-      {notesData.map((note, idx) => (
-        <div key={idx} style={styles.dropdown}>
-          <div
-            style={styles.dropdownTitle}
-            onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-          >
-            {note.title}
-          </div>
-          {openIdx === idx && (
-            <div className="notes-content" style={styles.dropdownContent}>
-              {note.content}
+      {openIdx === null ? (
+        // Grid view: show all cards
+        <div style={styles.grid}>
+          {notesData.map((note, idx) => (
+            <div
+              key={note.title}
+              style={styles.card}
+              onClick={() => setOpenIdx(idx)}
+            >
+              <div style={styles.cardTitle}>{note.title}</div>
             </div>
-          )}
+          ))}
         </div>
-      ))}
+      ) : (
+        // Focus view: show only the open card, full width, with a close button
+        <div style={styles.focusWrapper}>
+          <div style={styles.focusCard}>
+            <button
+              style={styles.closeBtn}
+              onClick={() => setOpenIdx(null)}
+              aria-label="Close"
+            >
+              ×
+            </button>
+            <div style={styles.cardTitle}>{notesData[openIdx].title}</div>
+            <div style={styles.cardContent}>{notesData[openIdx].content}</div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
