@@ -1,0 +1,11 @@
+{
+  "entropy": "A measure of disorder or uncertainty in a dataset’s class distribution. High entropy means classes are mixed, low entropy means they’re pure.",
+  "information gain": "The reduction in entropy achieved by partitioning data on an attribute: IG(S,A)=H(S)−Σ_v(|S_v|/|S|)·H(S_v).",
+  "gain ratio": "Adjusts Information Gain by how evenly an attribute splits data: GainRatio=IG/SplitInfo, penalizing high-cardinality attributes.",
+  "laplace smoothing": "Also called add-one smoothing; adds 1 to all feature counts in Naïve Bayes so no conditional probability is zero.",
+  "sampling distribution": "The probability distribution of a statistic over all possible samples of a fixed size from the population.",
+  "empirical distribution": "An approximation of the sampling distribution obtained by repeated sampling or bootstrapping and recording frequencies.",
+  "chi-square test": "A statistical test comparing observed vs. expected counts under independence, used to select categorical features.",
+  "pca": "Principal Component Analysis, a method to project data into a lower-dimensional linear subspace capturing maximal variance.",
+  "forward selection": "A wrapper feature selection that starts with no features and iteratively adds the one that most improves model performance."
+}

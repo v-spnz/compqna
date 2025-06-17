@@ -1,0 +1,530 @@
+[
+  {
+    "id": 1,
+    "question": "Which one of the following statements is/are correct about visualization technique Histogram?",
+    "options": [
+      { "text": "Divide the values into bins and show a bar plot of the number of objects in each bin.", "correct": false },
+      { "text": "The height of each bar indicates the number of objects.", "correct": false },
+      { "text": "Shape of the histogram depends on the number of bins.", "correct": false },
+      { "text": "All the mentioned", "correct": true }
+    ],
+    "explanation": "A histogram partitions a numeric attribute’s range into contiguous bins and draws a bar whose height equals the count of observations in each bin. By varying the number of bins you can reveal skewness, modality and outliers in the data—so all three statements are true. (Week 2 Lecture Slide 31) :contentReference[oaicite:0]{index=0}"
+  },
+  {
+    "id": 2,
+    "question": "What is the objective of backpropagation algorithm?",
+    "options": [
+      { "text": "To develop learning algorithm for single layer feedforward neural network", "correct": false },
+      { "text": "To develop learning algorithm for multilayer feedforward neural network, so that network can be trained to capture the mapping implicitly", "correct": true },
+      { "text": "To develop learning algorithm for multilayer backward neural network", "correct": false },
+      { "text": "None of the mentioned", "correct": false }
+    ],
+    "explanation": "Backpropagation extends gradient descent to networks with hidden layers by computing the contribution of each weight to the output error and propagating that error backward, so multilayer perceptrons can learn complex non-linear mappings. (Week 9 Lecture: General Algorithm for Learning ANN) :contentReference[oaicite:1]{index=1}"
+  },
+  {
+    "id": 3,
+    "question": "Which statement about Bayesian Networks is FALSE?",
+    "options": [
+      { "text": "They model feature dependencies.", "correct": false },
+      { "text": "They are less efficient than Naïve Bayes.", "correct": false },
+      { "text": "They use the K2 algorithm for structure learning.", "correct": false },
+      { "text": "They assume feature independence.", "correct": true }
+    ],
+    "explanation": "Bayesian Networks explicitly model conditional dependencies between features; in contrast, Naïve Bayes assumes all features are independent. (Final Exam Tips handout) :contentReference[oaicite:2]{index=2}"
+  },
+  {
+    "id": 4,
+    "question": "What is a leaf or terminal node in the decision tree?",
+    "options": [
+      { "text": "The end of the decision tree where it cannot be split into further sub-nodes.", "correct": true },
+      { "text": "Maximum depth", "correct": false },
+      { "text": "A subsection of the entire tree", "correct": false },
+      { "text": "A node that represents the entire population or sample", "correct": false }
+    ],
+    "explanation": "A leaf (terminal) node has no outgoing edges and represents a final predicted class or value—there are no further splits. (Week 5 Lecture: Decision Tree Basics) :contentReference[oaicite:3]{index=3}"
+  },
+  {
+    "id": 5,
+    "question": "Which method is an unsupervised learning method?",
+    "options": [
+      { "text": "Decision Tree", "correct": false },
+      { "text": "K-Nearest Neighbours", "correct": false },
+      { "text": "Random Forest", "correct": false },
+      { "text": "Clustering", "correct": true }
+    ],
+    "explanation": "Clustering algorithms group data based solely on similarity without using class labels, whereas the other listed methods are supervised and require labeled training data. (Week 5 Lecture: Supervised vs. Unsupervised Learning) :contentReference[oaicite:5]{index=5}"
+  },
+  {
+    "id": 6,
+    "question": "Which problem does Laplace Correction address?",
+    "options": [
+      { "text": "Overfitting due to high dimensionality", "correct": false },
+      { "text": "Zero probabilities for unseen feature-class pairs", "correct": true },
+      { "text": "Handling continuous data", "correct": false },
+      { "text": "Computational inefficiency", "correct": false }
+    ],
+    "explanation": "Laplace (add-one) smoothing adds a count of one to every feature–class combination to ensure that unseen pairs don’t result in zero probabilities in Naïve Bayes. (Week 7 Lecture: Naïve Bayes Classification) :contentReference[oaicite:6]{index=6}"
+  },
+  {
+    "id": 7,
+    "question": "What is the MAP rule in Naïve Bayes classification?",
+    "options": [
+      { "text": "Minimizing the prior probability", "correct": false },
+      { "text": "Maximizing the posterior probability", "correct": true },
+      { "text": "Averaging the likelihood", "correct": false },
+      { "text": "Ignoring the evidence term", "correct": false }
+    ],
+    "explanation": "The MAP (Maximum A Posteriori) rule selects the class c that maximizes P(c|x) ∝ P(x|c)·P(c), balancing likelihood with the prior. (Week 7 Lecture: Naïve Bayes Classification) :contentReference[oaicite:7]{index=7}"
+  },
+  {
+    "id": 8,
+    "question": "Which of the following best describes a sampling distribution of a statistic?",
+    "options": [
+      { "text": "The observed values of the statistic from a single sample", "correct": false },
+      { "text": "The distribution of all possible values of the statistic along with their probabilities", "correct": true },
+      { "text": "The distribution of individual data points in the population", "correct": false },
+      { "text": "The empirical counts of sample data", "correct": false }
+    ],
+    "explanation": "Sampling distribution lists all possible values of a statistic and their probabilities over all samples. (Week 3 Lecture)"
+  },
+  {
+    "id": 9,
+    "question": "The empirical distribution of a statistic is defined as:",
+    "options": [
+      { "text": "The theoretical distribution of a statistic", "correct": false },
+      { "text": "Based on simulated values of the statistic and the proportion of times each value appeared", "correct": true },
+      { "text": "The distribution of population values", "correct": false },
+      { "text": "The distribution of residual errors", "correct": false }
+    ],
+    "explanation": "The empirical distribution is the observed frequency of statistic values from simulations or bootstraps. (Week 3 Lecture)"
+  },
+  {
+    "id": 10,
+    "question": "Which feature selection method uses the chi-square test to assess independence between categorical features and the class label?",
+    "options": [
+      { "text": "Principal Component Analysis (PCA)", "correct": false },
+      { "text": "Pearson’s correlation", "correct": false },
+      { "text": "Recursive Feature Elimination (RFE)", "correct": false },
+      { "text": "Chi-square test", "correct": true }
+    ],
+    "explanation": "Chi-square test compares observed vs expected frequencies under independence to select categorical features. (Week 4 Lecture)"
+  },
+  {
+    "id": 11,
+    "question": "Which feature selection approach uses built‐in variable selection methods during model fitting (e.g., Lasso)?",
+    "options": [
+      { "text": "Filter methods", "correct": false },
+      { "text": "Wrapper methods", "correct": false },
+      { "text": "Embedded methods", "correct": true },
+      { "text": "Feature extraction", "correct": false }
+    ],
+    "explanation": "Embedded approaches (like Lasso or decision‐tree feature importances) integrate feature selection into the model‐fitting process itself—penalizing or prioritizing features while training, rather than as a separate preprocessing step. (Week 4 Lecture)"
+  },
+  {
+    "id": 12,
+    "question": "Which technique generates new features by projecting data into a lower‐dimensional linear subspace?",
+    "options": [
+      { "text": "Recursive Feature Elimination", "correct": false },
+      { "text": "Chi‐square test", "correct": false },
+      { "text": "Principal Component Analysis (PCA)", "correct": true },
+      { "text": "Forward selection", "correct": false }
+    ],
+    "explanation": "Principal Component Analysis creates new orthogonal features (principal components) by linearly projecting the original data onto directions of maximal variance. You then keep only the top components, reducing dimensionality while preserving most of the data’s spread. (Week 4 Lecture)"
+  },
+  {
+    "id": 13,
+    "question": "Which wrapper method starts with an empty feature set and adds attributes one at a time based on performance gain?",
+    "options": [
+      { "text": "Backward elimination", "correct": false },
+      { "text": "Forward selection", "correct": true },
+      { "text": "Recursive Feature Elimination (RFE)", "correct": false },
+      { "text": "Embedded regularization", "correct": false }
+    ],
+    "explanation": "A wrapper method that starts with no features and iteratively adds the one whose inclusion yields the largest gain in model performance (e.g., accuracy or cross-validated score) until no further improvement occurs. (Week 4 Lecture)"
+  },
+  {
+    "id": 14,
+    "question": "Which splitting criterion reduces bias toward high‐cardinality attributes by normalizing information gain?",
+    "options": [
+      { "text": "Information Gain", "correct": false },
+      { "text": "Gini Index", "correct": false },
+      { "text": "Gain Ratio", "correct": true },
+      { "text": "Chi‐square measure", "correct": false }
+    ],
+    "explanation": "Gain Ratio normalizes the raw information gain by the attribute’s intrinsic information (the entropy of its split) to penalize attributes with many distinct values. This guards against the bias of information gain toward high-cardinality splits. (Week 5 Lecture)"
+  },
+  {
+    "id": 15,
+    "question": "In the ID3 algorithm, the attribute chosen for a split is the one with the:",
+    "options": [
+      { "text": "Lowest entropy", "correct": false },
+      { "text": "Highest entropy", "correct": false },
+      { "text": "Lowest information gain", "correct": false },
+      { "text": "Highest information gain", "correct": true }
+    ],
+    "explanation": "At each node, ID3 computes the entropy reduction (information gain) from splitting on each candidate attribute and selects the attribute that maximizes that gain, thus most sharply reducing uncertainty about the class. (Week 5 Lecture)"
+  },
+  {
+    "id": 16,
+    "question": "Which method estimates model performance by partitioning data into k subsets and training on k-fold cross-validation?",
+    "options": [
+      { "text": "Holdout", "correct": false },
+      { "text": "Bootstrap", "correct": false },
+      { "text": "k-fold cross-validation", "correct": true },
+      { "text": "Leave-one-out sampling", "correct": false }
+    ],
+    "explanation": "You divide the data into k equally sized “folds,” then train k different models—each time holding out one fold for testing and training on the other k−1. Averaging the results gives a robust estimate of generalization. (Week 6 Lecture)"
+  },
+  {
+    "id": 17,
+    "question": "Which plot displays how a model’s accuracy changes with training-set size?",
+    "options": [
+      { "text": "ROC curve", "correct": false },
+      { "text": "Precision–recall curve", "correct": false },
+      { "text": "Learning curve", "correct": true },
+      { "text": "Calibration plot", "correct": false }
+    ],
+    "explanation": "A learning curve plots model performance (e.g., accuracy) on training and validation sets against increasing training-set size. It helps diagnose whether adding more data might fix underfitting or whether the model is already saturating. (Week 6 Lecture)"
+  },
+  {
+    "id": 18,
+    "question": "K-Nearest Neighbours is described as a “lazy learner” because it:",
+    "options": [
+      { "text": "Builds a complex model during training", "correct": false },
+      { "text": "Does no generalization or model building at prediction time", "correct": true },
+      { "text": "Uses only a subset of training data when classifying", "correct": false },
+      { "text": "Requires extensive feature engineering", "correct": false }
+    ],
+    "explanation": "K-Nearest Neighbours postpones all computation until prediction time: it simply stores the training set and, for each new query, computes distances to find the k closest points—no explicit model is built during “training.” (Week 8 Lecture)"
+  },
+  {
+    "id": 19,
+    "question": "Which distance metric counts the number of positions in which categorical vectors differ?",
+    "options": [
+      { "text": "Euclidean distance", "correct": false },
+      { "text": "Manhattan distance", "correct": false },
+      { "text": "Cosine distance", "correct": false },
+      { "text": "Hamming distance", "correct": true }
+    ],
+    "explanation": "For two equal-length categorical (or binary) vectors, Hamming distance is just the count of positions where they differ. It’s ideal for purely symbolic attributes. (Week 9 Lecture)"
+  },
+  {
+    "id": 20,
+    "question": "The primary role of the activation function in a neural network is to:",
+    "options": [
+      { "text": "Normalize input features", "correct": false },
+      { "text": "Scale output weights", "correct": false },
+      { "text": "Control the learning rate", "correct": false },
+      { "text": "Introduce non-linearity into the model", "correct": true }
+    ],
+    "explanation": "Without a non-linear activation (e.g., sigmoid, ReLU), each layer’s output is just a linear transformation of its input—stacking them collapses to a single linear mapping. Non-linear activations let networks approximate complex functions. (Week 9 Lecture)"
+  },
+  {
+    "id": 21,
+    "question": "Adding too many hidden neurons to a multilayer perceptron without regularization most likely leads to:",
+    "options": [
+      { "text": "Underfitting", "correct": false },
+      { "text": "Overfitting", "correct": true },
+      { "text": "Improved generalization", "correct": false },
+      { "text": "Faster convergence", "correct": false }
+    ],
+    "explanation": "Excessive hidden-layer size gives the network more capacity than needed, so it can memorize training noise rather than learn generalizable patterns. Regularization or early stopping is then required to avoid overfitting. (Week 9 Lecture)"
+  },
+  {
+    "id": 22,
+    "question": "Bagging (bootstrap aggregating) primarily aims to reduce which type of error?",
+    "options": [
+      { "text": "Bias", "correct": false },
+      { "text": "Variance", "correct": true },
+      { "text": "Residual noise", "correct": false },
+      { "text": "Misclassification cost", "correct": false }
+    ],
+    "explanation": "By training each base learner on a different bootstrap sample and averaging (or voting) their predictions, bagging smooths out the erratic fluctuations of individual models, cutting down on variance. (Week 11 Lecture)"
+  },
+  {
+    "id": 23,
+    "question": "Boosting differs from bagging in that it:",
+    "options": [
+      { "text": "Builds models in parallel", "correct": false },
+      { "text": "Focuses on correctly classifying instances misclassified by previous models", "correct": true },
+      { "text": "Uses decision stumps only", "correct": false },
+      { "text": "Samples without replacement", "correct": false }
+    ],
+    "explanation": "Boosting builds learners sequentially, each one paying special attention (via reweighting) to examples the previous learner misclassified. This emphasis on “hard” cases gradually corrects earlier mistakes. (Week 11 Lecture)"
+  },
+  {
+    "id": 24,
+    "question": "In a simple majority-voting ensemble, the final class label is determined by:",
+    "options": [
+      { "text": "Averaging predicted probabilities", "correct": false },
+      { "text": "Weighted voting by accuracy", "correct": false },
+      { "text": "Each classifier casting one vote, with the majority winning", "correct": true },
+      { "text": "Bayesian model averaging", "correct": false }
+    ],
+    "explanation": "In simple voting, each classifier casts one vote for its predicted class, and the most frequent class label wins. It’s a straightforward way to combine diverse learners. (Week 11 Lecture)"
+  },
+  {
+    "id": 25,
+    "question": "Which ensemble method creates multiple datasets by sampling with replacement and averages their predictions?",
+    "options": [
+      { "text": "Boosting", "correct": false },
+      { "text": "Stacking", "correct": false },
+      { "text": "Bagging", "correct": true },
+      { "text": "Voting", "correct": false }
+    ],
+    "explanation": "Bagging creates multiple training sets by sampling with replacement (bootstrap), trains a model on each, then aggregates their outputs (mean for regression, vote for classification). (Week 11 Lecture)"
+  },
+  {
+    "id": 26,
+    "question": "In a box plot, the line inside the box represents the:",
+    "options": [
+      { "text": "Mean", "correct": false },
+      { "text": "Median (50th percentile)", "correct": true },
+      { "text": "Mode", "correct": false },
+      { "text": "Interquartile range", "correct": false }
+    ],
+    "explanation": "The central line inside the box marks the 50th percentile (median) of the data. The box spans the interquartile range (25th–75th), with “whiskers” typically extending to 1.5× that range. (Week 2 Lecture)"
+  },
+  {
+    "id": 27,
+    "question": "Which measure of spread is defined as the difference between the maximum and minimum values?",
+    "options": [
+      { "text": "Variance", "correct": false },
+      { "text": "Standard deviation", "correct": false },
+      { "text": "Interquartile range", "correct": false },
+      { "text": "Range", "correct": true }
+    ],
+    "explanation": "The simplest spread measure, the range, is literally the difference between the dataset’s largest and smallest values. It’s quick but sensitive to outliers. (Week 2 Lecture)"
+  },
+  {
+    "id": 28,
+    "question": "The mode of an attribute is the:",
+    "options": [
+      { "text": "Average of its values", "correct": false },
+      { "text": "Value at the 50th percentile", "correct": false },
+      { "text": "Most frequent attribute value", "correct": true },
+      { "text": "Difference between maximum and minimum", "correct": false }
+    ],
+    "explanation": "The mode is the single attribute value that appears most often in your dataset. It’s the only measure of “central tendency” that you can use on purely categorical data. (Week 2 Lecture)"
+  },
+  {
+    "id": 29,
+    "question": "The 50th percentile of a dataset is the value below which ___% of the observations fall.",
+    "options": [
+      { "text": "25", "correct": false },
+      { "text": "50", "correct": true },
+      { "text": "75", "correct": false },
+      { "text": "100", "correct": false }
+    ],
+    "explanation": "By definition, the 50th percentile (the median) is the value below which half of your observations lie. It’s robust to outliers compared to the mean. (Week 2 Lecture)"
+  },
+  {
+    "id": 30,
+    "question": "“Curse of Dimensionality” refers to the phenomenon that as the number of features grows, the data required to generalize accurately grows:",
+    "options": [
+      { "text": "Linearly", "correct": false },
+      { "text": "Logarithmically", "correct": false },
+      { "text": "Exponentially", "correct": true },
+      { "text": "Not at all", "correct": false }
+    ],
+    "explanation": "As the number of features grows, the volume of the input space expands exponentially, so you need exponentially more samples to maintain the same sampling density and avoid sparse-data issues. (Week 3 & 12 Revision)"
+  },
+  {
+    "id": 31,
+    "question": "Feature selection reduces dimensionality by removing features; feature extraction reduces dimensionality by:",
+    "options": [
+      { "text": "Removing outliers", "correct": false },
+      { "text": "Selecting subsets of data", "correct": false },
+      { "text": "Generating new features based on the original dataset", "correct": true },
+      { "text": "Normalizing data values", "correct": false }
+    ],
+    "explanation": "Unlike selection (which simply drops features), extraction constructs new features—often lower-dimensional—by combining or transforming the originals (e.g., PCA, autoencoders), capturing most of the essential information. (Week 4 Lecture)"
+  },
+  {
+    "id": 32,
+    "question": "Random subsampling for performance evaluation is also known as:",
+    "options": [
+      { "text": "Leave-one-out sampling", "correct": false },
+      { "text": "Repeated holdout", "correct": true },
+      { "text": "k-fold cross-validation", "correct": false },
+      { "text": "Bootstrap", "correct": false }
+    ],
+    "explanation": "Random subsampling—or repeated holdout—involves randomly splitting into train/test multiple times and averaging results. It’s simpler than k-fold but can yield high variance if splits overlap heavily. (Week 6 Lecture)"
+  },
+  {
+    "id": 33,
+    "question": "The bootstrap method for estimating model performance samples data:",
+    "options": [
+      { "text": "Without replacement", "correct": false },
+      { "text": "With replacement", "correct": true },
+      { "text": "Proportionally by class", "correct": false },
+      { "text": "Only once per record", "correct": false }
+    ],
+    "explanation": "The bootstrap repeatedly draws samples of the same size as the original dataset but with replacement, so some instances appear multiple times while others may be left out. (Week 6 Lecture)"
+  },
+  {
+    "id": 34,
+    "question": "The Law of Large Numbers states that as the number of independent trials increases, the sample proportion converges to the:",
+    "options": [
+      { "text": "Sample mean", "correct": false },
+      { "text": "Population standard deviation", "correct": false },
+      { "text": "True theoretical probability", "correct": true },
+      { "text": "Population mode", "correct": false }
+    ],
+    "explanation": "As trials → ∞, the sample proportion of an event converges to its theoretical probability—guaranteeing empirical frequency matches true likelihood in the long run. (Week 3 Lecture)"
+  },
+  {
+    "id": 35,
+    "question": "In the holdout method, a common split is to reserve ___ of the data for testing.",
+    "options": [
+      { "text": "10%", "correct": false },
+      { "text": "33%", "correct": true },
+      { "text": "50%", "correct": false },
+      { "text": "90%", "correct": false }
+    ],
+    "explanation": "A common heuristic is to reserve roughly one-third of data for testing and two-thirds for training, balancing the need for enough training examples with a reliable evaluation size. (Week 6 Lecture)"
+  },
+  {
+    "id": 36,
+    "question": "In backpropagation, the parameter that controls the size of the weight-update step is called the:",
+    "options": [
+      { "text": "Momentum", "correct": false },
+      { "text": "Number of epochs", "correct": false },
+      { "text": "Learning rate", "correct": true },
+      { "text": "Batch size", "correct": false }
+    ],
+    "explanation": "The learning rate η scales each gradient-descent update step: larger η makes bigger jumps through weight space (risking overshoot), while smaller η takes more, safer but slower steps. (Week 9 Lecture)"
+  },
+  {
+    "id": 37,
+    "question": "Adding a momentum term during training of an MLP primarily serves to:",
+    "options": [
+      { "text": "Reduce the learning rate", "correct": false },
+      { "text": "Increase overfitting", "correct": false },
+      { "text": "Smooth and accelerate convergence of weight updates", "correct": true },
+      { "text": "Prevent any weight changes", "correct": false }
+    ],
+    "explanation": "Momentum carries over a fraction of the previous weight update, dampening oscillations in steep, narrow valleys of the loss surface and often accelerating convergence toward minima. (Week 9 Lecture)"
+  },
+  {
+    "id": 38,
+    "question": "In filter feature selection, the ANOVA F-test evaluates whether the means of a numeric attribute differ significantly across:",
+    "options": [
+      { "text": "Different folds in cross-validation", "correct": false },
+      { "text": "Different class labels", "correct": true },
+      { "text": "Different clusters", "correct": false },
+      { "text": "Consecutive time windows", "correct": false }
+    ],
+    "explanation": "In filter feature selection, the one-way ANOVA F-test checks whether the means of a numerical feature are significantly different across the various class labels—large F indicates strong class separation. (Week 4 Lecture)"
+  },
+  {
+    "id": 39,
+    "question": "Which filter method measures the linear correlation between two quantitative variables for feature selection?",
+    "options": [
+      { "text": "Chi-square test", "correct": false },
+      { "text": "ANOVA F-test", "correct": false },
+      { "text": "Pearson’s correlation", "correct": true },
+      { "text": "Recursive Feature Elimination", "correct": false }
+    ],
+    "explanation": "Pearson’s r measures the strength and direction of a linear relationship between two quantitative variables by dividing their covariance by the product of their standard deviations. Values near ±1 signal strong linear association. (Week 4 Lecture)"
+  },
+  {
+    "id": 40,
+    "question": "In boosting, each base learner is assigned a weight based on its performance on the training data so that:",
+    "options": [
+      { "text": "All models contribute equally", "correct": false },
+      { "text": "Poor models dominate the vote", "correct": false },
+      { "text": "Only the last model is used", "correct": false },
+      { "text": "Better-performing models contribute more to the final classification", "correct": true }
+    ],
+    "explanation": "After each boosting iteration, the algorithm assigns higher weight to base learners that achieve lower error on the reweighted data, so stronger learners have more say in the final, weighted vote. (Week 11 Lecture)"
+  },
+  {
+    "id": 41,
+    "question": "Which measure of spread is most robust to outliers?",
+    "options": [
+      { "text": "Range", "correct": false },
+      { "text": "Variance", "correct": false },
+      { "text": "Standard deviation", "correct": false },
+      { "text": "Interquartile range (IQR)", "correct": true }
+    ],
+    "explanation": "The interquartile range (IQR) is defined as the difference between the 75th and 25th percentiles. Because it only uses the middle 50% of the data, it is not affected by extreme values in the tails, making it robust to outliers. :contentReference[oaicite:0]{index=0}"
+  },
+  {
+    "id": 42,
+    "question": "Which rule gives the probability of the complement of an event A?",
+    "options": [
+      { "text": "P(A') = P(A) + 1", "correct": false },
+      { "text": "P(A') = 1 – P(A)", "correct": true },
+      { "text": "P(A') = 1 / P(A)", "correct": false },
+      { "text": "P(A') = P(A) · P(not A)", "correct": false }
+    ],
+    "explanation": "The complement rule states that the probability an event does _not_ occur is one minus the probability that it does: P(A') = 1 – P(A). :contentReference[oaicite:1]{index=1}"
+  },
+  {
+    "id": 43,
+    "question": "What does the multiplication rule state for two independent events A and B?",
+    "options": [
+      { "text": "P(A and B) = P(A) + P(B)", "correct": false },
+      { "text": "P(A and B) = P(A) · P(B)", "correct": true },
+      { "text": "P(A and B) = P(A) – P(B)", "correct": false },
+      { "text": "P(A and B) = P(A) / P(B)", "correct": false }
+    ],
+    "explanation": "For independent events, the probability that both occur is the product of their individual probabilities: P(A ∧ B) = P(A) × P(B). :contentReference[oaicite:2]{index=2}"
+  },
+  {
+    "id": 44,
+    "question": "According to Occam’s Razor in model selection, you should:",
+    "options": [
+      { "text": "Always pick the most complex model", "correct": false },
+      { "text": "Choose the model that achieves highest training accuracy, regardless of size", "correct": false },
+      { "text": "Prefer the simplest model that achieves comparable performance", "correct": true },
+      { "text": "Select models purely at random to avoid bias", "correct": false }
+    ],
+    "explanation": "Occam’s Razor suggests that, among models with similar performance on your data, the one with the fewest assumptions (i.e., simplest structure) is preferred to reduce the risk of overfitting. :contentReference[oaicite:3]{index=3}"
+  },
+  {
+    "id": 45,
+    "question": "Which scenario best describes overfitting?",
+    "options": [
+      { "text": "A model that has low training and low test accuracy", "correct": false },
+      { "text": "A model that has high training accuracy but much lower test accuracy", "correct": true },
+      { "text": "A model that performs equally well on training and test data", "correct": false },
+      { "text": "A model that never converges during training", "correct": false }
+    ],
+    "explanation": "Overfitting occurs when a model captures noise or spurious patterns in the training data—yielding very high in-sample accuracy—but fails to generalize, so its performance on unseen (test) data is substantially worse. :contentReference[oaicite:4]{index=4}"
+  },
+  {
+    "id": 46,
+    "question": "What is a key limitation of using accuracy alone to evaluate a classifier?",
+    "options": [
+      { "text": "It cannot be computed from a confusion matrix", "correct": false },
+      { "text": "It fails to distinguish between false positives and false negatives", "correct": false },
+      { "text": "It can be misleading when classes are imbalanced", "correct": true },
+      { "text": "It requires probabilistic outputs", "correct": false }
+    ],
+    "explanation": "Accuracy simply measures overall correct predictions and does not account for the difference between types of errors (FP vs. FN). On highly imbalanced datasets—where one class dominates—it can give a falsely high impression of performance. :contentReference[oaicite:5]{index=5}"
+  },
+  {
+    "id": 47,
+    "question": "For two mutually exclusive events A and B, the addition rule states:",
+    "options": [
+      { "text": "P(A or B) = P(A) + P(B)", "correct": true },
+      { "text": "P(A or B) = P(A) · P(B)", "correct": false },
+      { "text": "P(A or B) = P(A) – P(B)", "correct": false },
+      { "text": "P(A or B) = 1 – [P(A)+P(B)]", "correct": false }
+    ],
+    "explanation": "When A and B cannot both occur (mutually exclusive), the probability that either occurs is the sum of their individual probabilities: P(A ∪ B) = P(A)+P(B). :contentReference[oaicite:6]{index=6}"
+  },
+  {
+    "id": 48,
+    "question": "The Law of Large Numbers implies that as the number of independent trials grows:",
+    "options": [
+      { "text": "The sample mean diverges from the population mean", "correct": false },
+      { "text": "The sample proportion converges to its true probability", "correct": true },
+      { "text": "Variability of the sample increases", "correct": false },
+      { "text": "All outcomes become equally likely", "correct": false }
+    ],
+    "explanation": "The Law of Large Numbers guarantees that, under identical conditions, the empirical frequency (proportion) of an event will approach its theoretical probability as the number of trials becomes large. :contentReference[oaicite:7]{index=7}"
+  }
+]
