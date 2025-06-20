@@ -526,5 +526,150 @@
       { "text": "All outcomes become equally likely", "correct": false }
     ],
     "explanation": "The Law of Large Numbers guarantees that, under identical conditions, the empirical frequency (proportion) of an event will approach its theoretical probability as the number of trials becomes large. :contentReference[oaicite:7]{index=7}"
+  },
+    {
+    "id": 49,
+    "question": "Which ensemble technique assigns different weights to each classifier based on performance?",
+    "options": [
+      { "text": "Bagging", "correct": false },
+      { "text": "Boosting", "correct": true },
+      { "text": "Voting", "correct": false },
+      { "text": "Stacking", "correct": false }
+    ],
+    "explanation": "Boosting gives more influence to better-performing models by adjusting weights after each iteration, unlike bagging or simple voting. (Week 11 Lecture: Boosting)"
+  },
+  {
+    "id": 50,
+    "question": "Which of the following best describes what Principal Component Analysis (PCA) achieves?",
+    "options": [
+      { "text": "Creates new features that are combinations of the original features to capture the most variance", "correct": true },
+      { "text": "Removes redundant features by ranking them by importance", "correct": false },
+      { "text": "Improves classification accuracy directly", "correct": false },
+      { "text": "Sorts features based on correlation with the target variable", "correct": false }
+    ],
+    "explanation": "PCA transforms the feature space into uncorrelated components, ordered by variance explained, without using the target label. (Week 4 Lecture: PCA)"
+  },
+  {
+    "id": 51,
+    "question": "A model achieves very high accuracy on the training set but performs poorly on the test set. What does this indicate?",
+    "options": [
+      { "text": "High bias", "correct": false },
+      { "text": "Underfitting", "correct": false },
+      { "text": "High variance", "correct": true },
+      { "text": "Perfect generalization", "correct": false }
+    ],
+    "explanation": "This is a textbook case of overfitting, which reflects high variance — the model has learned the training data too well, including noise. (Week 6 Lecture: Bias–Variance Tradeoff)"
+  },
+  {
+    "id": 52,
+    "question": "In cross-validation, what is the purpose of stratified k-fold when used with imbalanced datasets?",
+    "options": [
+      { "text": "To ensure equal fold sizes regardless of class", "correct": false },
+      { "text": "To shuffle data before splitting", "correct": false },
+      { "text": "To preserve the percentage of samples for each class in each fold", "correct": true },
+      { "text": "To reduce the number of folds required", "correct": false }
+    ],
+    "explanation": "Stratified k-fold preserves class distributions across all folds, making evaluation fairer especially for imbalanced classification tasks. (Week 6 Lecture: Cross-Validation Techniques)"
+  },
+  {
+    "id": 53,
+    "question": "Which assumption allows the Naïve Bayes classifier to estimate probabilities efficiently?",
+    "options": [
+      { "text": "All features are conditionally independent given the class", "correct": true },
+      { "text": "All features are uncorrelated in the dataset", "correct": false },
+      { "text": "Class priors are uniform", "correct": false },
+      { "text": "The posterior probability is normally distributed", "correct": false }
+    ],
+    "explanation": "The conditional independence assumption simplifies the joint likelihood to a product of marginal likelihoods, making computation tractable. (Week 7 Lecture: Naïve Bayes Classification)"
+  },
+    {
+    "id": 54,
+    "question": "True or False: In bagging, each individual model is trained on a different bootstrap sample from the original dataset.",
+    "options": [
+      { "text": "True", "correct": true },
+      { "text": "False", "correct": false }
+    ],
+    "explanation": "Bagging (Bootstrap Aggregating) uses different bootstrap samples to train each model, enhancing variance reduction. (Week 11 Lecture: Bagging)"
+  },
+  {
+    "id": 55,
+    "question": "True or False: The sigmoid activation function outputs values between -1 and 1.",
+    "options": [
+      { "text": "True", "correct": false },
+      { "text": "False", "correct": true }
+    ],
+    "explanation": "The sigmoid function outputs values between 0 and 1, while the tanh function outputs between -1 and 1. (Week 9 Lecture: Neural Networks)"
+  },
+  {
+    "id": 56,
+    "question": "True or False: Feature selection methods are always dependent on the learning algorithm being used.",
+    "options": [
+      { "text": "True", "correct": false },
+      { "text": "False", "correct": true }
+    ],
+    "explanation": "Filter methods for feature selection, such as Chi-square or Pearson correlation, operate independently of any specific learning algorithm. (Week 4 Lecture: Feature Selection)"
+  },
+  {
+    "id": 57,
+    "question": "True or False: Increasing the number of nearest neighbors (k) in KNN generally reduces the model’s sensitivity to noise.",
+    "options": [
+      { "text": "True", "correct": true },
+      { "text": "False", "correct": false }
+    ],
+    "explanation": "A larger k smooths the decision boundary, making the classifier less sensitive to outliers and noise. (Week 8 Lecture: KNN)"
+  },
+  {
+    "id": 58,
+    "question": "True or False: In PCA, principal components are computed based on the class labels to maximize separation.",
+    "options": [
+      { "text": "True", "correct": false },
+      { "text": "False", "correct": true }
+    ],
+    "explanation": "PCA is an unsupervised method — it finds directions of maximum variance without considering class labels. (Week 4 Lecture: PCA)"
+  },
+   {
+    "id": 59,
+    "question": "True or False: The Central Limit Theorem states that the mean of a sample distribution will be normally distributed if the sample size is sufficiently large, regardless of the population distribution.",
+    "options": [
+      { "text": "True", "correct": true },
+      { "text": "False", "correct": false }
+    ],
+    "explanation": "The Central Limit Theorem holds for large enough sample sizes, making the sampling distribution of the mean approximately normal even if the population distribution is not. (Week 3 Lecture: Sampling Distributions)"
+  },
+  {
+    "id": 60,
+    "question": "True or False: A decision tree that continues splitting until all leaves are pure is less likely to overfit.",
+    "options": [
+      { "text": "True", "correct": false },
+      { "text": "False", "correct": true }
+    ],
+    "explanation": "Fully grown trees tend to overfit because they model the training data too precisely, including noise. (Week 5 Lecture: Overfitting in Decision Trees)"
+  },
+  {
+    "id": 61,
+    "question": "True or False: The k in k-fold cross-validation refers to the number of iterations the training process runs for.",
+    "options": [
+      { "text": "True", "correct": false },
+      { "text": "False", "correct": true }
+    ],
+    "explanation": "In k-fold cross-validation, 'k' is the number of subsets the data is divided into, not the number of training iterations. (Week 6 Lecture: k-Fold Cross-Validation)"
+  },
+  {
+    "id": 62,
+    "question": "True or False: Naïve Bayes can be used for both binary and multi-class classification problems.",
+    "options": [
+      { "text": "True", "correct": true },
+      { "text": "False", "correct": false }
+    ],
+    "explanation": "Naïve Bayes is a flexible classifier that supports multiple classes using the same conditional independence principle. (Week 7 Lecture: Naïve Bayes)"
+  },
+  {
+    "id": 63,
+    "question": "True or False: In ensemble learning, combining multiple weak learners can result in a strong learner.",
+    "options": [
+      { "text": "True", "correct": true },
+      { "text": "False", "correct": false }
+    ],
+    "explanation": "This is the core principle behind ensemble methods like boosting and bagging — combining weak models improves accuracy. (Week 11 Lecture: Ensemble Learning)"
   }
 ]
